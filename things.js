@@ -112,3 +112,8 @@ function keyPressed(event){ //for using keys to maneuver
     console.log("-");
   }
 }
+
+//lerp
+function lerp(){
+  
+}
