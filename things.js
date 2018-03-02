@@ -7,7 +7,8 @@ class SpaceThing{
     ctx.save();
     ctx.translate(canvas.width/2,canvas.height/2);
     let theta = rocket.vel.getDirection();
-    ctx.rotate(-theta);
+    lerp(-theta);
+    // ctx.rotate(-theta);
     ctx.beginPath();
     ctx.arc(this.loc.x-rocket.pos.x,this.loc.y-rocket.pos.y,5,0,Math.PI*2,true);
     ctx.fillStyle = "white";
@@ -89,19 +90,19 @@ function keyPressed(event){ //for using keys to maneuver
   let key = event.keyCode;
   if(key==87 || key==119){ //w
     rocket.accelerate();
-    console.log("w");
+    // console.log("w");
   }
   if(key==83 || key==115){ //s
     rocket.slowdown();
-    console.log("s");
+    // console.log("s");
   }
   if(key==65 || key==97){ // <--, a
     rocket.turnLeft();
-    console.log("a");
+    // console.log("a");
   }
   if(key==86 || key==100){ //-->, d
     rocket.turnRight();
-    console.log("d");
+    // console.log("d");
   }
   if(key==69 || key==101){ // e
     rocket.zoomIn();
@@ -114,6 +115,14 @@ function keyPressed(event){ //for using keys to maneuver
 }
 
 //lerp
-function lerp(){
-  
+function lerp(theta){
+  let diff = theta;
+  let icmt = theta*0.2
+  for(let i=0;i<5;i++){
+    ctx.rotate(icmt);
+    diff = diff - icmt;
+    icmt = diff*0.2;
+  }
 }
+
+//https://codepen.io/rachsmith/post/animation-tip-lerp
