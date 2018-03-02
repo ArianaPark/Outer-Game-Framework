@@ -4,7 +4,7 @@ var ctx;
 var spaceThings;
 var rocket;
 var world = [1800,1800];
-//change
+//change in lerp branch
 
 function init(){
   canvas = document.getElementById("cnv");
