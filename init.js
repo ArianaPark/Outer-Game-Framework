@@ -4,6 +4,7 @@ var ctx;
 var spaceThings;
 var rocket;
 var world = [1800,1800];
+//change
 
 function init(){
   canvas = document.getElementById("cnv");
