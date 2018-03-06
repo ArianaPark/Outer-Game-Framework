@@ -17,6 +17,20 @@ class SpaceThing{
   }
 }
 
+class Planet extends SpaceThing{
+  constructor(loc){
+    this.loc = loc;
+  }
+}
+
+class Asteroid extends SpaceThing{
+
+}
+
+class SpaceStation extends SpaceThing{
+
+}
+
 class Rocket{
   constructor(pos){
     this.pos = pos;
